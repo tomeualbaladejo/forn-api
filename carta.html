@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ca">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Carta · Forn Can Tomeu</title>
+		<link rel="preload" as="image" href="/assets/img/carta.jpg">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/variables.css">
+		<link rel="stylesheet" href="assets/css/base.css">
+		<link rel="stylesheet" href="assets/css/utilities.css">
+		<link rel="stylesheet" href="assets/css/header.css">
+		<link rel="stylesheet" href="assets/css/hero.css">
+		<link rel="stylesheet" href="assets/css/sections.css">
+		<link rel="stylesheet" href="assets/css/menu.css">
+	</head>
+	<body>
+		<header class="site-header" role="banner">
+			<div class="container header-inner">
+				<a href="index.html#inicio" class="brand" aria-label="Forn Can Tomeu, inici">
+					<img src="assets/img/logo.png" alt="Forn Can Tomeu" class="brand__logo" width="124" height="124">
+					<div class="brand__text">
+						<strong class="brand__name">Forn Can Tomeu</strong>
+						<small class="brand__claim" data-i18n="claim">Forners des de 1930</small>
+					</div>
+				</a>
+				<nav class="main-nav" aria-label="Navegació principal">
+					<ul class="nav-list">
+						<li><a href="index.html#inicio" data-i18n="nav.inici">Inici</a></li>
+						<li><a href="historia.html" data-i18n="nav.historia">Història</a></li>
+						<li><a aria-current="page" href="carta.html" data-i18n="nav.carta">Carta</a></li>
+						<li><a href="galeria.html" data-i18n="nav.galeria">Galeria</a></li>
+						<li><a href="index.html#contacto" data-i18n="nav.contacte">Contacte</a></li>
+					</ul>
+				</nav>
+				<div class="header-social" aria-label="Xarxes socials">
+					<a class="icon-btn" target="_blank" rel="noopener" href="https://www.instagram.com/forncantomeuinca/?hl=es" aria-label="Instagram">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#3a2615" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM18 6.8a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+					</a>
+					<a class="icon-btn" target="_blank" rel="noopener" href="https://www.facebook.com/p/Forn-Can-Tomeu-100083103770241/" aria-label="Facebook">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#3a2615" d="M13.5 9H16l.5-3h-3a3 3 0 0 0-3 3v2H8v3h2.5v7h3v-7H16l.5-3h-3V9a1 1 0 0 1 1-1h2V5h-2a3.5 3.5 0 0 0-3.5 3.5V11z"/></svg>
+					</a>
+				</div>
+				<div class="lang-switch" role="group" aria-label="Selector d'idioma">
+					<button class="lang-btn" data-lang="es">ES</button><span class="sep">|</span>
+					<button class="lang-btn is-active" data-lang="ca">CA</button><span class="sep">|</span>
+					<button class="lang-btn" data-lang="en">EN</button>
+				</div>
+			</div>
+		</header>
+		<main id="main">
+			<section class="hero hero--sub" aria-label="Carta">
+				<div class="hero__bg" style="background-image: linear-gradient(180deg, rgba(244,226,205,0.35), rgba(244,226,205,0.85)), url('/assets/img/carta.jpg')"></div>
+				<div class="container hero__content hero__content--photo" style="--hero-photo-url: '/assets/img/carta.jpg'">
+					<span class="eyebrow" data-i18n="menu.eyebrow">Per menjar aquí o per emportar</span>
+					<h1 class="hero__title serif" data-i18n="menu.title">La nostra carta</h1>
+					<p class="hero__subtitle" data-i18n="menu.subtitle">Torrades, entrepans i variats del dia.</p>
+				</div>
+			</section>
+			<section class="section">
+				<div class="container">
+					<div class="menu">
+					<details class="accordion">
+						<summary><h2 class="serif" data-i18n="menu.sections.tostadas">Tostadas</h2></summary>
+						<p class="menu-note" style="margin-top:0; opacity:.9;" data-i18n="menu.tostadas.note">Los precios indicados corresponden a media ración y ración entera.</p>
+							<ul class="menu-list">
+								<li><span data-i18n="menu.tostadas.jamonYork">Jamón York</span><span class="dots"></span><span class="price">3,00 €</span><span class="price">4,75 €</span></li>
+								<li><span data-i18n="menu.tostadas.jamonSerrano">Jamón Serrano</span><span class="dots"></span><span class="price">3,50 €</span><span class="price">6,00 €</span></li>
+								<li><span data-i18n="menu.tostadas.queso">Queso</span><span class="dots"></span><span class="price">3,00 €</span><span class="price">4,75 €</span></li>
+								<li><span data-i18n="menu.tostadas.quesoMahones">Queso Mahonés</span><span class="dots"></span><span class="price">4,25 €</span><span class="price">6,25 €</span></li>
+								<li><span data-i18n="menu.tostadas.atun">Atún</span><span class="dots"></span><span class="price">3,00 €</span><span class="price">5,00 €</span></li>
+								<li><span data-i18n="menu.tostadas.camaiot">Camaiot</span><span class="dots"></span><span class="price">4,50 €</span><span class="price">6,75 €</span></li>
+								<li><span data-i18n="menu.tostadas.sobrasada">Sobrasada</span><span class="dots"></span><span class="price">3,50 €</span><span class="price">4,75 €</span></li>
+								<li><span data-i18n="menu.tostadas.aguacateTomate">Aguacate y tomate</span><span class="dots"></span><span class="price">3,75 €</span><span class="price">6,00 €</span></li>
+								<li><span data-i18n="menu.tostadas.aguacateSalmon">Aguacate y salmón</span><span class="dots"></span><span class="price">4,75 €</span><span class="price">6,75 €</span></li>
+								<li><span data-i18n="menu.tostadas.aguacateEmbutido">Aguacate y embutido</span><span class="dots"></span><span class="price">4,75 €</span><span class="price">6,75 €</span></li>
+								<li><span data-i18n="menu.tostadas.tortillaPatatas">Tortilla de patatas</span><span class="dots"></span><span class="price">4,25 €</span><span class="price price--empty"></span></li>
+								<li><span data-i18n="menu.tostadas.tortillaFrancesa">Tortilla francesa</span><span class="dots"></span><span class="price">3,80 €</span><span class="price price--empty"></span></li>
+								<li><span data-i18n="menu.tostadas.tortillaEmbutido">Tortilla francesa con embutido</span><span class="dots"></span><span class="price">4,75 €</span><span class="price price--empty"></span></li>
+							</ul>
+						</details>
+
+						<details class="accordion">
+							<summary><h2 class="serif" data-i18n="menu.sections.bocatas">Bocatas</h2></summary>
+							<ul class="menu-list">
+								<li><span data-i18n="menu.bocatas.pepitoLomoPollo">Pepito de lomo / pollo</span><span class="dots"></span><span class="price">5,75 €</span><span class="price price--empty"></span></li>
+								<li><span data-i18n="menu.bocatas.pepitoCompleto">Pepito completo</span><span class="dots"></span><span class="price">6,75 €</span><span class="price price--empty"></span></li>
+								<li><span data-i18n="menu.bocatas.serranito">Serranito</span><span class="dots"></span><span class="price">6,25 €</span><span class="price price--empty"></span></li>
+								<li><span data-i18n="menu.bocatas.calamares">Calamares romana</span><span class="dots"></span><span class="price">6,75 €</span><span class="price price--empty"></span></li>
+								<li><span data-i18n="menu.bocatas.llonguetVariado">Llonguet de variado</span><span class="dots"></span><span class="price">6,50 €</span><span class="price price--empty"></span></li>
+							</ul>
+						</details>
+
+						<details class="accordion">
+							<summary><h2 class="serif" data-i18n="menu.sections.variados">Variados</h2></summary>
+						<p class="menu-note" style="margin-top:0; opacity:.9;" data-i18n="menu.variados.note">Los precios indicados corresponden a media ración y ración entera.</p>
+							<ul class="menu-list">
+								<li><span data-i18n="menu.variados.lomoSetas">Lomo con setas</span><span class="dots"></span><span class="price">8,00 €</span><span class="price">5,00 €</span></li>
+								<li><span data-i18n="menu.variados.lengua">Lengua</span><span class="dots"></span><span class="price">8,00 €</span><span class="price">5,00 €</span></li>
+								<li><span data-i18n="menu.variados.albondigas">Albóndigas</span><span class="dots"></span><span class="price">8,00 €</span><span class="price">5,00 €</span></li>
+								<li><span data-i18n="menu.variados.callos">Callos</span><span class="dots"></span><span class="price">8,00 €</span><span class="price">5,00 €</span></li>
+								<li><span data-i18n="menu.variados.caminites">Caminites</span><span class="dots"></span><span class="price">8,00 €</span><span class="price">5,00 €</span></li>
+								<li><span data-i18n="menu.variados.sepiaCebolla">Sepia con cebolla</span><span class="dots"></span><span class="price">9,50 €</span><span class="price">5,50 €</span></li>
+								<li><span data-i18n="menu.variados.ensaladilla">Ensaladilla</span><span class="dots"></span><span class="price">4,00 €</span><span class="price price--empty"></span></li>
+								<li><span data-i18n="menu.variados.croquetas">Croquetas de pollo</span><span class="dots"></span><span class="price">5,00 €</span><span class="price price--empty"></span></li>
+								<li><span data-i18n="menu.variados.calamares">Calamares romana</span><span class="dots"></span><span class="price">5,00 €</span><span class="price price--empty"></span></li>
+							</ul>
+						</details>
+
+						<p class="menu-note" data-i18n="menu.note">Nota: Los precios pueden variar. IVA incluido.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="assets/js/i18n.js"></script>
+	</body>
+</html>
+

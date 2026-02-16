@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ca">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Història · Forn Can Tomeu</title>
+		<link rel="preload" as="image" href="/assets/img/historia.jpg">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/variables.css">
+		<link rel="stylesheet" href="assets/css/base.css">
+		<link rel="stylesheet" href="assets/css/utilities.css">
+		<link rel="stylesheet" href="assets/css/header.css">
+		<link rel="stylesheet" href="assets/css/hero.css">
+		<link rel="stylesheet" href="assets/css/sections.css">
+	</head>
+	<body>
+		<header class="site-header" role="banner">
+			<div class="container header-inner">
+				<a href="index.html#inicio" class="brand" aria-label="Forn Can Tomeu, inici">
+					<img src="assets/img/logo.png" alt="Forn Can Tomeu" class="brand__logo" width="124" height="124">
+					<div class="brand__text">
+						<strong class="brand__name">Forn Can Tomeu</strong>
+						<small class="brand__claim" data-i18n="claim">Forners des de 1930</small>
+					</div>
+				</a>
+				<nav class="main-nav" aria-label="Navegació principal">
+					<ul class="nav-list">
+						<li><a href="index.html#inicio" data-i18n="nav.inici">Inici</a></li>
+						<li><a aria-current="page" href="historia.html" data-i18n="nav.historia">Història</a></li>
+						<li><a href="carta.html" data-i18n="nav.carta">Carta</a></li>
+						<li><a href="galeria.html" data-i18n="nav.galeria">Galeria</a></li>
+						<li><a href="index.html#contacto" data-i18n="nav.contacte">Contacte</a></li>
+					</ul>
+				</nav>
+				<div class="header-social" aria-label="Xarxes socials">
+					<a class="icon-btn" target="_blank" rel="noopener" href="https://www.instagram.com/forncantomeuinca/?hl=es" aria-label="Instagram">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#3a2615" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM18 6.8a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+					</a>
+					<a class="icon-btn" target="_blank" rel="noopener" href="https://www.facebook.com/p/Forn-Can-Tomeu-100083103770241/" aria-label="Facebook">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#3a2615" d="M13.5 9H16l.5-3h-3a3 3 0 0 0-3 3v2H8v3h2.5v7h3v-7H16l.5-3h-3V9a1 1 0 0 1 1-1h2V5h-2a3.5 3.5 0 0 0-3.5 3.5V11z"/></svg>
+					</a>
+				</div>
+				<div class="lang-switch" role="group" aria-label="Selector d'idioma">
+					<button class="lang-btn" data-lang="es">ES</button><span class="sep">|</span>
+					<button class="lang-btn is-active" data-lang="ca">CA</button><span class="sep">|</span>
+					<button class="lang-btn" data-lang="en">EN</button>
+				</div>
+			</div>
+		</header>
+
+		<main id="main">
+			<section class="hero hero--sub" aria-label="Història del forn">
+				<div class="hero__bg" style="background-image: linear-gradient(180deg, rgba(244,226,205,0.35), rgba(244,226,205,0.85)), url('/assets/img/historia.jpg')"></div>
+				<div class="container hero__content hero__content--photo" style="--hero-photo-url: '/assets/img/historia.jpg'">
+					<span class="eyebrow" data-i18n="claim">Forners des de 1930</span>
+					<h1 class="hero__title serif" data-i18n="history.title">Família de forners</h1>
+					<p class="hero__subtitle" data-i18n="history.subtitle">Tres generacions dedicades a l’ofici de forner</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="container">
+					<div class="text-cols">
+						<p data-i18n="history.p1">El Forn Can Tomeu, amb més de noranta anys d’història i tres generacions al darrere, és una de les poques fleques que actualment treballa amb un forn de llenya tradicional a l’illa.</p>
+						<p data-i18n="history.p2">La història comença el 1930, quan l’avi de l’actual propietari, que feia feina a Can Guixe, decideix obrir el seu propi forn. El seu fill, en Tomeu, l’ajudava repartint el pa pel poble amb bicicleta.</p>
+						<p data-i18n="history.p3">Anys més tard, en Toni va agafar el relleu del negoci familiar, va ampliar el local i va crear l’espai de cafeteria, conservant el mateix forn de llenya original que se segueix utilitzant avui en dia.</p>
+					</div>
+					<div class="generations">
+						<figure>
+							<img src="assets/img/gen-primera.jpg" alt="Primera generació – Forn antic amb forner i pans" loading="lazy">
+							<figcaption data-i18n="history.g1">1ª Generació – 1930</figcaption>
+						</figure>
+						<figure>
+							<img src="assets/img/gen-segunda.jpg" alt="Segona generació – Forner davant el forn de llenya (B/N)" loading="lazy">
+							<figcaption data-i18n="history.g2">2ª Generació – Tomeu</figcaption>
+						</figure>
+						<figure>
+							<img src="assets/img/gen-tercera.jpg" alt="Tercera generació – Toni al forn amb els nins" loading="lazy">
+							<figcaption data-i18n="history.g3">3ª Generació – Toni</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="assets/js/i18n.js"></script>
+	</body>
+	</html>
+

@@ -1,0 +1,101 @@
+.order-modal[aria-hidden="true"] { display: none; }
+.order-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+}
+.order-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,.35);
+	backdrop-filter: blur(2px);
+}
+.order-card {
+	position: relative;
+	margin: 6vh auto;
+	width: min(680px, 92%);
+	background: var(--cream);
+	border: 1px solid rgba(91,58,36,0.12);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-sm);
+	overflow: hidden;
+	max-height: 88vh; /* Ensure the modal fits on small screens */
+	display: flex;
+	flex-direction: column;
+}
+.order-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.9rem 1rem;
+	background: linear-gradient(180deg, #fff, #f6efe7);
+	border-bottom: 1px solid rgba(91,58,36,0.12);
+	position: sticky;
+	top: 0; /* Keep header visible when form scrolls */
+	z-index: 1;
+}
+.order-close {
+	appearance: none;
+	background: transparent;
+	border: 0;
+	font-size: 1.4rem;
+	line-height: 1;
+	cursor: pointer;
+	color: var(--brown-700);
+}
+.order-form {
+	padding: 0.9rem 1rem 1.1rem;
+	display: grid;
+	gap: 0.7rem;
+	overflow: auto; /* Allow internal scroll if content grows */
+	-webkit-overflow-scrolling: touch;
+}
+.field {
+	display: grid;
+	gap: 0.35rem;
+}
+.field input, .field textarea {
+	border: 1px solid rgba(91,58,36,0.22);
+	border-radius: 10px;
+	padding: 0.7rem 0.75rem;
+	background: #fff;
+	color: var(--brown-900);
+	font: inherit;
+}
+.field .help {
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
+.order-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 0.4rem;
+}
+.order-success {
+	margin-top: 0.4rem;
+	background: #e6f7eb;
+	border: 1px solid #b7e3c1;
+	color: #214d2b;
+	padding: 0.7rem 0.8rem;
+	border-radius: 10px;
+	font-weight: 600;
+}
+
+/* Secondary line inside success block */
+.order-success .msg-main { display:block; }
+.order-success .cancel-note {
+  display: block;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+.order-success .cancel-note a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600; /* slightly bolder phone */
+}
+
+@media (max-width: 480px) {
+	.order-card { margin: 4vh auto; max-height: 92vh; }
+}
+
