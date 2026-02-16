@@ -15,8 +15,10 @@ const url = require("url");
 
 const PORT = process.env.PORT || 5173;
 const ROOT = path.resolve(__dirname);
-const DATA_DIR = path.join(ROOT, "data");
+// Allow overriding data directory for persistent storage on Render
+const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(ROOT, "data");
 const DATA_FILE = path.join(DATA_DIR, "orders.json");
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "https://forncantomeu.com";
 
 // Simple admin credentials (change these in production)
 const ADMIN_USER = process.env.ADMIN_USER || "forner";
@@ -143,6 +145,22 @@ function requireAuth(req, res) {
 
 const server = http.createServer(async (req, res) => {
 	const { pathname, query } = url.parse(req.url, true);
+	// CORS (allow static site origin, and localhost for development)
+	const origin = req.headers.origin || "";
+	const isDev =
+		/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin) ||
+		!origin; // direct calls (same-origin) or tools
+	if (origin && (origin === ALLOWED_ORIGIN || isDev)) {
+		res.setHeader("Access-Control-Allow-Origin", origin);
+		res.setHeader("Vary", "Origin");
+		res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+		res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+	}
+	if (req.method === "OPTIONS") {
+		res.writeHead(204);
+		res.end();
+		return;
+	}
 
 	// API routes
 	if (pathname === "/api/orders" && req.method === "POST") {

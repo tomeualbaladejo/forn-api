@@ -1,4 +1,5 @@
 (function () {
+	const API_BASE = window.API_BASE || "https://forn-api.onrender.com";
 	const tbody = document.getElementById("orders-body");
 	const refreshBtn = document.getElementById("refresh");
 
@@ -11,7 +12,7 @@
 	}
 
 	async function fetchOrders() {
-		const res = await fetch("/api/orders?status=pending", { cache: "no-store" });
+		const res = await fetch(`${API_BASE}/api/orders?status=pending`, { cache: "no-store" });
 		if (!res.ok) {
 			alert("Error cargando encargos. ¿Tienes acceso?");
 			return;
@@ -112,7 +113,7 @@
 			pedido: editForm.pedido.value.trim(),
 			estado: editForm.estado.value
 		};
-		const res = await fetch(`/api/orders/${id}`, {
+		const res = await fetch(`${API_BASE}/api/orders/${id}`, {
 			method: "PUT",
 			headers: { "Content-Type":"application/json" },
 			body: JSON.stringify(payload)
@@ -144,18 +145,18 @@
 		const tr = btn.closest("tr");
 		if (action === "edit") {
 			// Fetch full order to edit (admin is authorized)
-			const res = await fetch(`/api/orders/${id}`, { method:"GET" });
+			const res = await fetch(`${API_BASE}/api/orders/${id}`, { method:"GET" });
 			if (!res.ok) { alert("No se ha podido cargar el pedido."); return; }
 			const json = await res.json();
 			if (!json.ok || !json.order) { alert("No se ha podido cargar el pedido."); return; }
 			openEdit(json.order, tr);
 		} else if (action === "prep") {
-			const res = await fetch(`/api/orders/${id}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ estado: "preparada" }) });
+			const res = await fetch(`${API_BASE}/api/orders/${id}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ estado: "preparada" }) });
 			if (!res.ok) { alert("No se ha podido marcar como preparada."); return; }
 			setRowPrepared(tr);
 		} else if (action === "del") {
 			if (!confirm("¿Eliminar reserva?")) return;
-			const res = await fetch(`/api/orders/${id}`, { method: "DELETE" });
+			const res = await fetch(`${API_BASE}/api/orders/${id}`, { method: "DELETE" });
 			if (!res.ok) { alert("No se ha podido eliminar."); return; }
 			// remove row after delete
 			tr?.remove();

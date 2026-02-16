@@ -1,4 +1,6 @@
 (function () {
+	// configurable API base for cross-origin deployments (Render)
+	const API_BASE = window.API_BASE || "https://forn-api.onrender.com";
 	const modal = document.getElementById("order-modal");
 	const openBtn = document.getElementById("open-order");
 	const closeEls = modal?.querySelectorAll("[data-close]");
@@ -68,7 +70,7 @@
 			return;
 		}
 		try {
-			const res = await fetch("/api/orders", {
+			const res = await fetch(`${API_BASE}/api/orders`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(data)
