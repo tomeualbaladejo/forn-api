@@ -178,6 +178,8 @@ const server = http.createServer(async (req, res) => {
 			if (!isValidDateString(fecha_recogida)) return send(res, 400, { ok: false, error: "Fecha inválida" });
 			const today = localDateStringYYYYMMDD();
 			if (fecha_recogida < today) return send(res, 400, { ok: false, error: "Fecha anterior a hoy" });
+			const pickupDate = new Date(fecha_recogida + "T00:00:00");
+			if (pickupDate.getDay() === 0) return send(res, 400, { ok: false, error: "No pickups available on Sundays" });
 			const orders = readOrders();
 			const id = orders.length ? Math.max(...orders.map(o => o.id || 0)) + 1 : 1;
 			const now = new Date();
@@ -274,7 +276,11 @@ const server = http.createServer(async (req, res) => {
 				const fields = ["nombre","apellidos","telefono","fecha_recogida","pedido","estado"];
 				for (const f of fields) {
 					if (body[f] !== undefined) {
-						if (f === "fecha_recogida" && !isValidDateString(body[f])) continue;
+						if (f === "fecha_recogida") {
+							if (!isValidDateString(body[f])) continue;
+							const pickupDate = new Date(body[f] + "T00:00:00");
+							if (pickupDate.getDay() === 0) return send(res, 400, { ok: false, error: "No pickups available on Sundays" });
+						}
 						orders[idx][f] = String(body[f]);
 					}
 				}
