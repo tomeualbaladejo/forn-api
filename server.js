@@ -162,6 +162,13 @@ const server = http.createServer(async (req, res) => {
 		return;
 	}
 
+	// Health check (no auth, no DB) — for UptimeRobot / Render keep-alive
+	if (pathname === "/health" && req.method === "GET") {
+		res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+		res.end("OK");
+		return;
+	}
+
 	// API routes
 	if (pathname === "/api/orders" && req.method === "POST") {
 		try {
